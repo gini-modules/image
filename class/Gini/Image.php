@@ -95,6 +95,8 @@ class Image {
         $this->im = $im;
         $this->curr_width = $width;
         $this->curr_height = $height;
+        
+        return $this;
     }
 
     public function crop($left,$top,$width,$height) {
@@ -136,6 +138,8 @@ class Image {
         $this->im = $im;
         $this->curr_width = $width;
         $this->curr_height = $height;
+        
+        return $this;
     }
 
     public function cropFromCenter($width, $height) {
@@ -145,6 +149,8 @@ class Image {
         $left = round(($this->curr_width - $width) / 2);
         $top = round(($this->curr_height - $height) / 2);
         $this->crop($left, $top, $width, $height);
+        
+        return $this;
     }
 
     public function quality($quality=100){
@@ -269,6 +275,8 @@ class Image {
         $this->im = $im;
         $this->curr_width = $width;
         $this->curr_height = $newHeight;
+        
+        return $this;
     }
 
     private $backgroundColor;
@@ -341,6 +349,8 @@ class Image {
         $this->im = $im;
         $this->curr_width = $this->curr_height;
         $this->curr_height = $this->curr_width;
+        
+        return $this;
     }
 
     public function text($text, $x=0, $y=0, $font='', $font_size=18){
@@ -375,6 +385,8 @@ class Image {
     
         ImageAlphaBlending($this->im, true);
         ImageCopy($this->im, $wm, $x, $y, 0, 0, $text_width, $text_height);
+        
+        return $this;
     
     }
 
